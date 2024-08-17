@@ -1,0 +1,262 @@
+html, body {
+    height: 100%; /* Asegura que el HTML y el body ocupen toda la altura de la pantalla */
+    margin: 0;
+}
+
+.header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Reducimos el padding para minimizar el espacio */
+    background-color: var(--clr-main);
+}
+
+.back-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Tamaño del icono */
+    color: var(--clr-white); /* Ajusta el color según tu diseño */
+    text-decoration: none;
+    margin-right: 1rem; /* Espacio entre el icono y el logo */
+}
+
+.back-icon:hover {
+    color: var(--clr-main-light); /* Cambia el color al hacer hover si lo deseas */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Eliminamos cualquier margen adicional */
+}
+
+.logo-img {
+    max-height: 50px;
+    width: auto;
+    display: block;
+}
+
+
+.wrapper-detalle {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--clr-main);
+}
+
+.main-detalle {
+    flex: 1;
+    background-color: var(--clr-white);
+    margin: 0; /* Aseguramos que no haya margen superior */
+    border-radius: 2rem;
+    padding: 2rem; /* Ajustamos el padding para mantener una separación adecuada */
+}
+
+
+.detalle-producto {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px; /* Agregamos un ancho máximo para pantallas muy grandes */
+    margin: 0 auto; /* Centramos el contenido */
+}
+
+.producto-imagenes {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra las imágenes horizontalmente */
+    max-width: 500px; /* Limita el ancho máximo del contenedor de imágenes */
+}
+
+.imagen-principal {
+    width: 100%;
+    max-width: 450px; /* Limita el ancho máximo de la imagen principal */
+    height: 350px; /* Fija la altura de la imagen principal */
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    object-position: center; /* Centra la imagen dentro del contenedor */
+}
+
+.miniaturas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* Centra las miniaturas */
+    width: 100%;
+    max-width: 200px; /* Alinea con el ancho máximo de la imagen principal */
+}
+
+.miniatura {
+    width: calc(50% - 0.5rem);
+    max-width: 150px; /* Limita el ancho máximo de cada miniatura */
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.miniatura {
+    width: calc(50% - 0.5rem);
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.miniatura:hover {
+    opacity: 0.8;
+}
+
+.producto-info {
+    flex: 1;
+}
+
+.producto-titulo {
+    font-size: 2rem;
+    color: var(--clr-main);
+    margin-bottom: 1rem;
+}
+
+.producto-precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--clr-main);
+    margin-bottom: 1rem;
+}
+
+.producto-descripcion {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.producto-disponibilidad {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.producto-agregar,
+.producto-comprar {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.producto-agregar {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+.producto-comprar {
+    background-color: var(--clr-main-light);
+    color: var(--clr-main);
+}
+
+.producto-agregar:hover,
+.producto-comprar:hover {
+    opacity: 0.9;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: space-between; /* Distribuye los iconos uniformemente */
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%; /* Asegura que ocupen todo el ancho del contenedor */
+}
+
+.red-social {
+    font-size: 1.5rem;
+    color: var(--clr-main);
+    transition: color 0.3s ease;
+    flex: 1; /* Hace que cada ícono ocupe el mismo espacio */
+    text-align: center; /* Centra los íconos en su espacio */
+}
+
+.red-social:hover {
+    color: var(--clr-main-light);
+}
+
+
+@media screen and (max-width: 768px) {
+    .detalle-producto {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .miniaturas {
+        justify-content: center;
+    }
+
+    .miniatura {
+        width: calc(25% - 0.5rem);
+    }
+}
+
+.scroll-indicat {
+    position: fixed;
+    bottom: 20px; /* Ajusta según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px;
+    display: none; /* Ocultamos inicialmente */
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+}
+
+.scroll-indicat i {
+    font-size: 24px;
+    color: #888;
+    display: inline-block;
+    line-height: 24px;
+    animation: bounceArrow 1s infinite;
+    margin: 0 5px;
+}
+
+.scroll-indicat i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.scroll-indicat i:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+
+.map-container {
+    margin-top: 0rem;
+    text-align: center;
+    background-color: var(--clr-white);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-title {
+    font-size: 1.5rem;
+    color: var(--clr-main);
+    margin-bottom: 1rem;
+}
+
+iframe {
+    width: 80%;
+    height: 300px; /* Ajusta la altura según sea necesario */
+    border-radius: 1rem;
+}
