@@ -39,7 +39,9 @@ function cargarProductos(productosElegidos) {
 
         // Añadir el evento click a la imagen para redirigir a detalle.html
         div.querySelector(".producto-imagen").addEventListener("click", function() {
-            window.location.href = "detalle.html";
+            console.log("Producto seleccionado:", producto);
+            // Redirige a detalle.html con el id del producto
+            window.location.href = `detalle.html?id=${producto.id}`;
         });
 
         contenedorProductos.append(div);

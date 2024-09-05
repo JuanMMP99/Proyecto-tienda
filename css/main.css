@@ -475,6 +475,9 @@ main {
     }
 }
 
+
+/*** Botón WhatsApp ***/
+
 .float {
     position: fixed;
     width: 60px;
@@ -499,6 +502,9 @@ main {
 .my-float {
     margin-top: 16px;
 }
+
+
+/*** Ventana emergente ***/
 
 .window-notice {
     background: rgba(33, 41, 52, .85);
