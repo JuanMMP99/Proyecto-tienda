@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": "abrigo-01",
         "titulo": "Abrigo 01",
         "imagen": "./img/abrigos/01.jpg",
@@ -7,7 +6,7 @@
             "nombre": "Abrigos",
             "id": "abrigos"
         },
-        "precio": 1000
+        "precio": 1500
     },
     {
         "id": "abrigo-02",

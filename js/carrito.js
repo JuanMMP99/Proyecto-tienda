@@ -139,7 +139,7 @@ botonComprar.addEventListener("click", () => {
         const total = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
         mensaje += `%0ATotal: $${total}`;
         
-        const numeroTelefono = "9514990142";
+        const numeroTelefono = "9511469220";
         const url = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
         
         window.open(url, "_blank");
