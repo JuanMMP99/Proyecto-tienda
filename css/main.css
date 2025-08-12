@@ -240,10 +240,101 @@ main {
 
 .contenedor-productos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
 }
 
+/* Nuevos estilos para las cards */
+.card {
+    width: 220px;
+    height: 280px;
+    padding: .8em;
+    background: #f5f5f5;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    background-color: #ffcaa6;
+    height: 45%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
+    padding-top: 10%;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+.card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+}
+
+/*Text*/
+.text-title {
+    font-weight: 900;
+    font-size: 1.1em;
+    line-height: 1.3;
+    color: var(--clr-main);
+}
+
+.text-body {
+    font-size: .85em;
+    padding-bottom: 10px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/*Button*/
+.card-button {
+    border: 1px solid var(--clr-main);
+    display: flex;
+    padding: .4em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+    background-color: transparent;
+}
+
+/*Hover*/
+.card-img:hover {
+    transform: translateY(-10px);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+}
+
+.card-button:hover {
+    border: 1px solid var(--clr-main-light);
+    background-color: var(--clr-main-light);
+}
+
+.card-button:hover svg path {
+    fill: var(--clr-main);
+}
+
+/* Estilos antiguos mantenidos para compatibilidad */
 .producto-imagen {
     max-width: 100%;
     border-radius: 1rem;
@@ -281,7 +372,6 @@ main {
     background-color: var(--clr-main);
     color: var(--clr-white);
 }
-
 
 /** CARRITO **/
 
@@ -382,18 +472,29 @@ main {
     display: none;
 }
 
-
 /*** MEDIA QUERIES ***/
 
 @media screen and (max-width: 850px) {
     .contenedor-productos {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .card {
+        width: 200px;
+        height: 260px;
     }
 }
 
 @media screen and (max-width: 675px) {
     .contenedor-productos {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+    
+    .card {
+        width: 180px;
+        height: 240px;
     }
 }
 
@@ -429,8 +530,14 @@ main {
         padding: 2rem;
     }
     .contenedor-productos {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
+    
+    .card {
+        width: 160px;
+        height: 220px;
+    }
+    
     .header-mobile {
         padding: 1rem;
         display: flex;
@@ -473,8 +580,13 @@ main {
     .contenedor-productos {
         grid-template-columns: 1fr;
     }
+    
+    .card {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
 }
-
 
 /*** Botón WhatsApp ***/
 
@@ -502,7 +614,6 @@ main {
 .my-float {
     margin-top: 16px;
 }
-
 
 /*** Ventana emergente ***/
 
